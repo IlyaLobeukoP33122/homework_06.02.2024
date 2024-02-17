@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>/</title>
+</head>
+<body>
+<script>
+ 
+// Обработка строк
+let str = "JavaScript is awesome!";
+console.log(str);
+
+console.log(str.toUpperCase());
+console.log(str.toLowerCase());
+console.log(str.indexOf("awesome"));
+
+// Слияние и шаблоны строк
+let str1 = "Hello";
+let str2 = "World";
+console.log(str1 + " " + str2);
+console.log(Привет, ${name} ${surname}!);
+
+
+
+// Создание и использование объектов
+let person = {
+    name: "John",
+    age: 30,
+    hobbies: ["reading", "swimming"],
+    sayInfo: function() {
+        console.log(Name: ${this.name}, Age: ${this.age});
+    }
+};
+
+// Доступ к свойствам и их изменение
+person.age = 35;
+person.favoriteColor = "blue";
+
+
+
+// Работа с массивами
+let fruits = ["apple", "banana", "orange", "grape", "kiwi"];
+for (let fruit of fruits) {
+    console.log(fruit);
+}
+fruits.unshift("strawberry");
+fruits.push("pineapple");
+
+// Методы массивов
+fruits.sort();
+let fruitsUpperCase = fruits.map(fruit => fruit.toUpperCase());
+
+
+
+// Создание и вызов функций
+function greet(name) {
+    console.log(Привет, ${name}!);
+}
+greet("Alice");
+greet("Bob");
+
+// Функции высшего порядка
+function processArray(arr, callback) {
+    return arr.map(callback);
+}
+
+
+
+// Создание промисов
+const promise1 = new Promise((resolve) => {
+    setTimeout(() => {
+        resolve("Промис выполнен!");
+    }, 2000);
+});
+
+const promise2 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        reject(new Error("Промис отклонён!"));
+    }, 3000);
+});
+
+// Использование промисов
+promise1.then(result => console.log(result))
+        .catch(error => console.error(error))
+        .finally(() => console.log("Выполнение промиса завершено"));
+
+promise2.then(result => console.log(result))
+        .catch(error => console.error(error))
+        .finally(() => console.log("Выполнение промиса завершено"));
+</script>
+</body>
+</html>
